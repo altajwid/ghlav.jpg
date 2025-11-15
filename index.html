@@ -3,255 +3,209 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>المحتوى المرئي والصوتي للكتاب</title>
+<title>المحتوى المرئي والصوتي لكتاب دليل أحكام التجويد</title>
 
 <style>
     body {
-        font-family: "Cairo", system-ui, sans-serif;
-        background-color: #f3f4f6;
+        font-family: "Cairo", sans-serif;
+        background-color: #f4f4f4;
         margin: 0;
         padding: 0;
-    }
-
-    .page {
-        max-width: 900px;
-        margin: 30px auto 40px;
-        padding: 0 16px;
-    }
-
-    .card {
-        background: #ffffff;
-        border-radius: 18px;
-        box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-        padding: 22px 20px 18px;
-    }
-
-    .cover-wrap {
         text-align: center;
-        margin-bottom: 18px;
+    }
+
+    .container {
+        width: 85%;
+        max-width: 850px;
+        margin: 30px auto;
+        background: #fff;
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+
+    /* بطاقة الغلاف */
+    .cover-wrapper {
+        text-align: center;
+        margin-bottom: 25px;
+    }
+
+    .cover-card {
+        width: 260px;
+        margin: 0 auto 15px;
+        background: #ffffff;
+        padding: 10px;
+        border-radius: 14px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+        transition: transform .3s, box-shadow .3s;
+    }
+
+    .cover-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 26px rgba(0,0,0,0.18);
     }
 
     .cover-img {
-        max-width: 260px;
         width: 100%;
-        border-radius: 14px;
-        box-shadow: 0 12px 28px rgba(0,0,0,0.2);
+        border-radius: 10px;
     }
 
     h1 {
-        text-align: center;
         font-size: 26px;
-        margin: 12px 0 6px;
-    }
-
-    .subtitle {
-        text-align: center;
-        font-size: 14px;
-        color: #6b7280;
-        margin-bottom: 14px;
-    }
-
-    .section {
-        background: #f9fafb;
-        border-radius: 14px;
-        padding: 14px 14px 16px;
-        margin-top: 16px;
-        border: 1px solid #e5e7eb;
-    }
-
-    .section-title {
-        font-size: 18px;
-        font-weight: 700;
         margin-bottom: 10px;
-        display: flex;
-        align-items: center;
-        gap: 6px;
-        color: #111827;
+        font-weight: 700;
+        color: #222;
     }
 
-    .section-title span.icon {
-        font-size: 20px;
+    p.subtitle {
+        font-size: 16px;
+        color: #444;
+        margin-bottom: 25px;
     }
 
-    ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
+    /* الأقسام */
+    .section-card {
+        background: rgba(243,243,243,0.9);
+        border-radius: 12px;
+        padding: 12px 18px 18px;
+        margin-bottom: 35px;
+        border: 1px solid #ddd;
         text-align: right;
     }
 
-    li {
-        font-size: 15px;
-        margin: 5px 0;
-        line-height: 1.6;
+    .section-title {
+        font-size: 17px;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        margin-bottom: 12px;
+    }
+
+    .section-title i {
+        margin-left: 6px;
+        font-size: 20px;
+    }
+
+    .lesson-list {
+        list-style: none;
+        padding: 0;
+    }
+
+    .lesson-list li {
+        padding: 7px 0;
+        border-bottom: 1px solid #e5e5e5;
         display: flex;
         justify-content: space-between;
-        gap: 10px;
-        align-items: baseline;
+        align-items: center;
     }
 
-    li .lesson-label {
-        font-weight: 600;
-        color: #111827;
+    .lesson-list li:last-child {
+        border-bottom: none;
     }
 
-    li .tag {
-        font-size: 12px;
-        padding: 2px 8px;
-        border-radius: 999px;
-        white-space: nowrap;
-    }
-
-    .tag-video {
-        background-color: #eff6ff;
-        color: #1d4ed8;
-        border: 1px solid #bfdbfe;
-    }
-
-    .tag-audio {
-        background-color: #ecfdf3;
-        color: #15803d;
-        border: 1px solid #bbf7d0;
-    }
-
-    .tag-pdf {
-        background-color: #fef3c7;
-        color: #92400e;
-        border: 1px solid #fde68a;
-    }
-
-    .rights {
-        margin-top: 22px;
-        text-align: center;
+    .btn-soon {
+        background: #d0e7ff;
+        padding: 4px 10px;
+        border-radius: 8px;
         font-size: 13px;
-        color: #4b5563;
-        padding-top: 10px;
-        border-top: 1px dashed #e5e7eb;
+        color: #0056a3;
+        text-decoration: none;
     }
 
-    @media (max-width: 600px) {
-        .card {
-            padding: 18px 14px 14px;
-        }
-        h1 {
-            font-size: 22px;
-        }
-        li {
-            flex-direction: column;
-            align-items: flex-start;
-        }
+    /* حقوق النشر */
+    .copyright {
+        margin-top: 35px;
+        font-size: 15px;
+        color: #444;
+        background: #f0f0f0;
+        padding: 12px;
+        border-radius: 10px;
     }
 </style>
-</head>
 
+</head>
 <body>
 
-<div class="page">
-    <div class="card">
+<div class="container">
 
-        <!-- صورة الغلاف -->
-        <div class="cover-wrap">
-            <!-- إذا لم تظهر الصورة تأكد أن اسم الملف في المستودع هو ghlav.jpg أو غيّر هذا الاسم ليتطابق معه -->
-            <img src="ghlav.jpg" alt="غلاف الكتاب" class="cover-img">
+    <!-- الغلاف -->
+    <div class="cover-wrapper">
+        <div class="cover-card">
+            <img src="glav.jpg" alt="غلاف الكتاب" class="cover-img">
         </div>
-
-        <h1>المحتوى المرئي والصوتي للكتاب</h1>
-        <div class="subtitle">
-            هذه الصفحة مخصّصة لمواد الكتاب الرقمية. الروابط سيتم تفعيلها لاحقًا بإذن الله.
-        </div>
-
-        <!-- قسم تحميل الكتاب PDF -->
-        <div class="section">
-            <div class="section-title">
-                <span class="icon">📚</span>
-                <span>تحميل الكتاب (PDF)</span>
-            </div>
-            <ul>
-                <li>
-                    <span class="lesson-label">تحميل نسخة الكتاب كاملة بصيغة PDF</span>
-                    <span class="tag tag-pdf">سيتوفر رابط التحميل قريبًا</span>
-                </li>
-            </ul>
-        </div>
-
-        <!-- قسم الفيديوهات -->
-        <div class="section">
-            <div class="section-title">
-                <span class="icon">📺</span>
-                <span>فيديوهات الكتاب</span>
-            </div>
-            <ul>
-                <li>
-                    <span class="lesson-label">مشاهدة ملف فيديو واحد يجمع جميع دروس الكتاب</span>
-                    <span class="tag tag-video">الرابط متاح قريبًا</span>
-                </li>
-
-                <li><span class="lesson-label">مشاهدة الدرس (1): القرآن الكريم وعلم التجويد</span><span class="tag tag-video">الرابط متاح قريبًا</span></li>
-                <li><span class="lesson-label">مشاهدة الدرس (2): المدود</span><span class="tag tag-video">الرابط متاح قريبًا</span></li>
-                <li><span class="lesson-label">مشاهدة الدرس (3): مخارج الحروف</span><span class="tag tag-video">الرابط متاح قريبًا</span></li>
-                <li><span class="lesson-label">مشاهدة الدرس (4): صفات الحروف</span><span class="tag tag-video">الرابط متاح قريبًا</span></li>
-                <li><span class="lesson-label">مشاهدة الدرس (5): ال التعريف الشمسية والقمريّة</span><span class="tag tag-video">الرابط متاح قريبًا</span></li>
-                <li><span class="lesson-label">مشاهدة الدرس (6): اللامات السواكن</span><span class="tag tag-video">الرابط متاح قريبًا</span></li>
-                <li><span class="lesson-label">مشاهدة الدرس (7): إدغام المتماثلين والمتجانسين والمتقاربين</span><span class="tag tag-video">الرابط متاح قريبًا</span></li>
-                <li><span class="lesson-label">مشاهدة الدرس (8): الحروف المقطعة</span><span class="tag tag-video">الرابط متاح قريبًا</span></li>
-                <li><span class="lesson-label">مشاهدة الدرس (9): الألفات السبعة</span><span class="tag tag-video">الرابط متاح قريبًا</span></li>
-                <li><span class="lesson-label">مشاهدة الدرس (10): التفخيم والترقيق</span><span class="tag tag-video">الرابط متاح قريبًا</span></li>
-                <li><span class="lesson-label">مشاهدة الدرس (11): الوقف والابتداء</span><span class="tag tag-video">الرابط متاح قريبًا</span></li>
-                <li><span class="lesson-label">مشاهدة الدرس (12): السكت</span><span class="tag tag-video">الرابط متاح قريبًا</span></li>
-                <li><span class="lesson-label">مشاهدة الدرس (13): الروم والإشمام</span><span class="tag tag-video">الرابط متاح قريبًا</span></li>
-                <li><span class="lesson-label">مشاهدة الدرس (14): التقاء الساكنين</span><span class="tag tag-video">الرابط متاح قريبًا</span></li>
-                <li><span class="lesson-label">مشاهدة الدرس (15): ملاحظات حول قراءة حفص</span><span class="tag tag-video">الرابط متاح قريبًا</span></li>
-                <li><span class="lesson-label">مشاهدة الدرس (16): القراء العشرة ورواتهم</span><span class="tag tag-video">الرابط متاح قريبًا</span></li>
-                <li><span class="lesson-label">مشاهدة الدرس (17): الهمزة الأولية (الوصل والقطع)</span><span class="tag tag-video">الرابط متاح قريبًا</span></li>
-                <li><span class="lesson-label">مشاهدة الدرس (18): الرسم العثماني للمصحف الشريف</span><span class="tag tag-video">الرابط متاح قريبًا</span></li>
-                <li><span class="lesson-label">مشاهدة الدرس (19): فوائد تجويدية</span><span class="tag tag-video">الرابط متاح قريبًا</span></li>
-                <li><span class="lesson-label">مشاهدة الدرس (20): لطائف قرآنية</span><span class="tag tag-video">الرابط متاح قريبًا</span></li>
-                <li><span class="lesson-label">مشاهدة الدرس (21): ثمرات متصلة</span><span class="tag tag-video">الرابط متاح قريبًا</span></li>
-            </ul>
-        </div>
-
-        <!-- قسم الصوتيات -->
-        <div class="section">
-            <div class="section-title">
-                <span class="icon">🎧</span>
-                <span>صوتيات الكتاب</span>
-            </div>
-            <ul>
-                <li>
-                    <span class="lesson-label">استماع ملف صوتي واحد يجمع جميع دروس الكتاب</span>
-                    <span class="tag tag-audio">الصوت قيد التحضير</span>
-                </li>
-
-                <li><span class="lesson-label">استماع الدرس (1): القرآن الكريم وعلم التجويد</span><span class="tag tag-audio">الصوت قيد التحضير</span></li>
-                <li><span class="lesson-label">استماع الدرس (2): المدود</span><span class="tag tag-audio">الصوت قيد التحضير</span></li>
-                <li><span class="lesson-label">استماع الدرس (3): مخارج الحروف</span><span class="tag tag-audio">الصوت قيد التحضير</span></li>
-                <li><span class="lesson-label">استماع الدرس (4): صفات الحروف</span><span class="tag tag-audio">الصوت قيد التحضير</span></li>
-                <li><span class="lesson-label">استماع الدرس (5): ال التعريف الشمسية والقمريّة</span><span class="tag tag-audio">الصوت قيد التحضير</span></li>
-                <li><span class="lesson-label">استماع الدرس (6): اللامات السواكن</span><span class="tag tag-audio">الصوت قيد التحضير</span></li>
-                <li><span class="lesson-label">استماع الدرس (7): إدغام المتماثلين والمتجانسين والمتقاربين</span><span class="tag tag-audio">الصوت قيد التحضير</span></li>
-                <li><span class="lesson-label">استماع الدرس (8): الحروف المقطعة</span><span class="tag tag-audio">الصوت قيد التحضير</span></li>
-                <li><span class="lesson-label">استماع الدرس (9): الألفات السبعة</span><span class="tag tag-audio">الصوت قيد التحضير</span></li>
-                <li><span class="lesson-label">استماع الدرس (10): التفخيم والترقيق</span><span class="tag tag-audio">الصوت قيد التحضير</span></li>
-                <li><span class="lesson-label">استماع الدرس (11): الوقف والابتداء</span><span class="tag tag-audio">الصوت قيد التحضير</span></li>
-                <li><span class="lesson-label">استماع الدرس (12): السكت</span><span class="tag tag-audio">الصوت قيد التحضير</span></li>
-                <li><span class="lesson-label">استماع الدرس (13): الروم والإشمام</span><span class="tag tag-audio">الصوت قيد التحضير</span></li>
-                <li><span class="lesson-label">استماع الدرس (14): التقاء الساكنين</span><span class="tag tag-audio">الصوت قيد التحضير</span></li>
-                <li><span class="lesson-label">استماع الدرس (15): ملاحظات حول قراءة حفص</span><span class="tag tag-audio">الصوت قيد التحضير</span></li>
-                <li><span class="lesson-label">استماع الدرس (16): القراء العشرة ورواتهم</span><span class="tag tag-audio">الصوت قيد التحضير</span></li>
-                <li><span class="lesson-label">استماع الدرس (17): الهمزة الأولية (الوصل والقطع)</span><span class="tag tag-audio">الصوت قيد التحضير</span></li>
-                <li><span class="lesson-label">استماع الدرس (18): الرسم العثماني للمصحف الشريف</span><span class="tag tag-audio">الصوت قيد التحضير</span></li>
-                <li><span class="lesson-label">استماع الدرس (19): فوائد تجويدية</span><span class="tag tag-audio">الصوت قيد التحضير</span></li>
-                <li><span class="lesson-label">استماع الدرس (20): لطائف قرآنية</span><span class="tag tag-audio">الصوت قيد التحضير</span></li>
-                <li><span class="lesson-label">استماع الدرس (21): ثمرات متصلة</span><span class="tag tag-audio">الصوت قيد التحضير</span></li>
-            </ul>
-        </div>
-
-        <!-- حقوق التأليف -->
-        <div class="rights">
-            حقوق التأليف: يُسمح بالنسخ والمشاركة والنشر دون قيود
-        </div>
-
+        <h1>المحتوى المرئي والصوتي لكتاب:<br> دليل أحكام التجويد (على رواية حفص عن عاصم)</h1>
+        <p class="subtitle">الروابط سيتم تفعيلها لاحقًا بإذن الله.</p>
     </div>
+
+    <!-- قسم الفيديوهات -->
+    <div class="section-card">
+        <div class="section-title">📺 فيديوهات الكتاب</div>
+        <ul class="lesson-list">
+
+            <li><span>مشاهدة ملف فيديو واحد لجميع دروس الكتاب</span><a class="btn-soon">الرابط متاح قريبًا</a></li>
+
+            <li><span>مشاهدة الدرس (1): القرآن الكريم وعلم التجويد</span><a class="btn-soon">الرابط متاح قريبًا</a></li>
+            <li><span>مشاهدة الدرس (2): المدود</span><a class="btn-soon">الرابط متاح قريبًا</a></li>
+            <li><span>مشاهدة الدرس (3): مخارج الحروف</span><a class="btn-soon">الرابط متاح قريبًا</a></li>
+            <li><span>مشاهدة الدرس (4): صفات الحروف</span><a class="btn-soon">الرابط متاح قريبًا</a></li>
+            <li><span>مشاهدة الدرس (5): ال التعريف الشمسية والقمرية</span><a class="btn-soon">الرابط متاح قريبًا</a></li>
+            <li><span>مشاهدة الدرس (6): اللامات السواكن</span><a class="btn-soon">الرابط متاح قريبًا</a></li>
+            <li><span>مشاهدة الدرس (7): إدغام المتماثلين والمتجانسين والمتقاربين</span><a class="btn-soon">الرابط متاح قريبًا</a></li>
+            <li><span>مشاهدة الدرس (8): الحروف المقطعة</span><a class="btn-soon">الرابط متاح قريبًا</a></li>
+            <li><span>مشاهدة الدرس (9): الألفات السبعة</span><a class="btn-soon">الرابط متاح قريبًا</a></li>
+            <li><span>مشاهدة الدرس (10): التفخيم والترقيق</span><a class="btn-soon">الرابط متاح قريبًا</a></li>
+            <li><span>مشاهدة الدرس (11): الوقف والابتداء</span><a class="btn-soon">الرابط متاح قريبًا</a></li>
+            <li><span>مشاهدة الدرس (12): السكت</span><a class="btn-soon">الرابط متاح قريبًا</a></li>
+            <li><span>مشاهدة الدرس (13): الروم والإشمام</span><a class="btn-soon">الرابط متاح قريبًا</a></li>
+            <li><span>مشاهدة الدرس (14): التقاء الساكنين</span><a class="btn-soon">الرابط متاح قريبًا</a></li>
+            <li><span>مشاهدة الدرس (15): ملاحظات حول قراءة حفص</span><a class="btn-soon">الرابط متاح قريبًا</a></li>
+            <li><span>مشاهدة الدرس (16): القراء العشرة ورواتهم</span><a class="btn-soon">الرابط متاح قريبًا</a></li>
+            <li><span>مشاهدة الدرس (17): الهمزة الأولية (الوصل والقطع)</span><a class="btn-soon">الرابط متاح قريبًا</a></li>
+            <li><span>مشاهدة الدرس (18): الرسم العثماني للمصحف الشريف</span><a class="btn-soon">الرابط متاح قريبًا</a></li>
+            <li><span>مشاهدة الدرس (19): فوائد تجويدية</span><a class="btn-soon">الرابط متاح قريبًا</a></li>
+            <li><span>مشاهدة الدرس (20): لطائف قرآنية</span><a class="btn-soon">الرابط متاح قريبًا</a></li>
+            <li><span>مشاهدة الدرس (21): ثمرات متصلة</span><a class="btn-soon">الرابط متاح قريبًا</a></li>
+
+        </ul>
+    </div>
+
+    <!-- قسم الصوتيات -->
+    <div class="section-card">
+        <div class="section-title">🎧 صوتيات الكتاب</div>
+        <ul class="lesson-list">
+
+            <li><span>ملف صوتي واحد يجمع جميع الدروس</span><a class="btn-soon">الرابط متاح قريبًا</a></li>
+
+            <li><span>استماع الدرس (1)</span><a class="btn-soon">الرابط متاح قريبًا</a></li>
+            <li><span>استماع الدرس (2)</span><a class="btn-soon">الرابط متاح قريبًا</a></li>
+            <li><span>استماع الدرس (3)</span><a class="btn-soon">الرابط متاح قريبًا</a></li>
+            <li><span>استماع الدرس (4)</span><a class="btn-soon">الرابط متاح قريبًا</a></li>
+            <li><span>استماع الدرس (5)</span><a class="btn-soon">الرابط متاح قريبًا</a></li>
+            <li><span>استماع الدرس (6)</span><a class="btn-soon">الرابط متاح قريبًا</a></li>
+            <li><span>استماع الدرس (7)</span><a class="btn-soon">الرابط متاح قريبًا</a></li>
+            <li><span>استماع الدرس (8)</span><a class="btn-soon">الرابط متاح قريبًا</a></li>
+            <li><span>استماع الدرس (9)</span><a class="btn-soon">الرابط متاح قريبًا</a></li>
+            <li><span>استماع الدرس (10)</span><a class="btn-soon">الرابط متاح قريبًا</a></li>
+            <li><span>استماع الدرس (11)</span><a class="btn-soon">الرابط متاح قريبًا</a></li>
+            <li><span>استماع الدرس (12)</span><a class="btn-soon">الرابط متاح قريبًا</a></li>
+            <li><span>استماع الدرس (13)</span><a class="btn-soon">الرابط متاح قريبًا</a></li>
+            <li><span>استماع الدرس (14)</span><a class="btn-soon">الرابط متاح قريبًا</a></li>
+            <li><span>استماع الدرس (15)</span><a class="btn-soon">الرابط متاح قريبًا</a></li>
+            <li><span>استماع الدرس (16)</span><a class="btn-soon">الرابط متاح قريبًا</a></li>
+            <li><span>استماع الدرس (17)</span><a class="btn-soon">الرابط متاح قريبًا</a></li>
+            <li><span>استماع الدرس (18)</span><a class="btn-soon">الرابط متاح قريبًا</a></li>
+            <li><span>استماع الدرس (19)</span><a class="btn-soon">الرابط متاح قريبًا</a></li>
+            <li><span>استماع الدرس (20)</span><a class="btn-soon">الرابط متاح قريبًا</a></li>
+            <li><span>استماع الدرس (21)</span><a class="btn-soon">الرابط متاح قريبًا</a></li>
+
+        </ul>
+    </div>
+
+    <!-- حقوق النشر -->
+    <div class="copyright">
+        يُسمح بالنسخ والمشاركة والنشر دون قيود.
+    </div>
+
 </div>
 
 </body>
