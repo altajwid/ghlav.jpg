@@ -4,6 +4,33 @@
     <meta charset="UTF-8">
     <title>المحتوى المرئي والصوتي للكتاب</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+/* أزرار التحميل الثلاثة تحت الغلاف */
+.top-downloads {
+    margin: 0 0 20px;
+}
+
+.top-btn {
+    color: #ffffff;
+    text-align: center;
+    padding: 10px 12px;
+    border-radius: 12px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    font-size: 15px;
+}
+
+/* ألوان هادئة مستوحاة من الغلاف */
+.top-btn.pdf {
+    background: #14532d;   /* أخضر داكن هادئ */
+}
+
+.top-btn.video {
+    background: #c88a6b;   /* خوخي ناعم (لون الزهور) */
+}
+
+.top-btn.audio {
+    background: #8b6b3f;   /* ذهبي زيتوني ناعم */
+}
 
     <style>
         body {
@@ -137,13 +164,15 @@
 
     <!-- صورة الغلاف -->
     <img src="cover.jpg" class="cover" alt="غلاف الكتاب">
+    <img src="cover.jpg" class="cover" alt="غلاف الكتاب">
 
     <!--  🔽 أزرار التحميل الجديدة 🔽 -->
-    <div class="download-box">
-        <a href="#" class="download-btn">📥 تحميل الكتاب PDF</a>
-        <a href="#" class="download-btn">🎬 تحميل جميع الفيديوهات كملف واحد</a>
-        <a href="#" class="download-btn">🎧 تحميل جميع الصوتيات كملف واحد</a>
-    </div>
+<div class="top-downloads">
+    <div class="top-btn pdf">☕ تحميل الكتاب PDF</div>
+    <div class="top-btn video">🎬 تحميل جميع الفيديوهات كملف واحد</div>
+    <div class="top-btn audio">🎧 تحميل جميع الصوتيات كملف واحد</div>
+</div>
+
     <!--  🔼 نهاية الإضافة المطلوبة فقط 🔼 -->
 
     <!-- المحتوى المرئي -->
