@@ -46,8 +46,8 @@
         padding: 13px;
         font-size: 16px;
         font-weight: 700;
-        border: none;
         border-radius: 12px;
+        border: none;
         background: #d59a8b;
         color: white;
         cursor: pointer;
@@ -55,9 +55,68 @@
         transition: 0.25s;
         backdrop-filter: blur(6px);
     }
+
     .download-btn:hover {
         transform: scale(1.04);
         box-shadow: 0 0 12px rgba(213,154,139,0.8);
+    }
+
+    /* 🌟 إطار ذهبي فاخر لزر تحميل الكتاب PDF */
+    .download-btn.pdf-main {
+        background: linear-gradient(135deg, #cfa57c, #8c6b4c);
+        border: 2px solid #d4af37;
+        box-shadow: 0 0 14px rgba(212,175,55,0.75);
+    }
+
+    .download-btn.pdf-main:hover {
+        box-shadow: 0 0 18px rgba(212,175,55,0.9);
+        transform: scale(1.05);
+    }
+
+    /* أزرار العمليات الإضافية (طباعة + مشاركة) */
+    .actions-row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+        margin: 10px 0 18px;
+    }
+
+    .action-btn,
+    .share-btn {
+        border-radius: 10px;
+        border: none;
+        padding: 8px 14px;
+        font-size: 14px;
+        font-weight: 700;
+        cursor: pointer;
+        text-decoration: none;
+        color: #fff;
+        transition: 0.2s;
+    }
+
+    .action-btn.print-btn {
+        background: #374151;
+    }
+    .action-btn.print-btn:hover {
+        background: #111827;
+        transform: scale(1.02);
+    }
+
+    .share-btn.wa {
+        background: #128C7E;
+    }
+    .share-btn.wa:hover {
+        background: #0f6c61;
+        transform: scale(1.02);
+    }
+
+    .share-btn.tg {
+        background: #0088cc;
+    }
+    .share-btn.tg:hover {
+        background: #006fa6;
+        transform: scale(1.02);
     }
 
     /* العناوين */
@@ -121,13 +180,17 @@
         backdrop-filter: blur(8px);
     }
 
-    .videos-collection-btn { background: #168949cc; }
+    .videos-collection-btn {
+        background: #168949cc;
+    }
     .videos-collection-btn:hover {
         transform: scale(1.05);
         box-shadow: 0 0 12px rgba(22,137,73,0.7);
     }
 
-    .audios-collection-btn { background: #2e4bb3cc; }
+    .audios-collection-btn {
+        background: #2e4bb3cc;
+    }
     .audios-collection-btn:hover {
         transform: scale(1.05);
         box-shadow: 0 0 12px rgba(46,75,179,0.7);
@@ -156,8 +219,17 @@
     <!-- صورة الغلاف -->
     <img src="cover.jpg" class="cover" alt="غلاف الكتاب">
 
-    <!-- تم نقل زر التحميل إلى هنا -->
-    <a href="#" class="download-btn">📥 تحميل الكتاب PDF</a>
+    <!-- زر تحميل الكتاب داخل إطار ذهبي فاخر -->
+    <a href="#" class="download-btn pdf-main">📥 تحميل الكتاب PDF</a>
+
+    <!-- أزرار: طباعة + مشاركة -->
+    <div class="actions-row">
+        <button class="action-btn print-btn" onclick="window.print()">🖨️ طباعة الصفحة</button>
+    </div>
+    <div class="actions-row">
+        <button class="share-btn wa" onclick="shareWhatsApp()">📲 مشاركة عبر واتساب</button>
+        <button class="share-btn tg" onclick="shareTelegram()">📨 مشاركة عبر تيلغرام</button>
+    </div>
 
     <!-- المحتوى المرئي -->
     <div class="section-title video-title">📘 المحتوى المرئي (الفيديوهات)</div>
@@ -191,6 +263,7 @@
         <div class="item"><span>مشاهدة الدرس (25): ثَمَراتٌ مُتَّصِلةٌ</span><span class="soon-badge">⏳ قريبًا</span></div>
     </div>
 
+    <!-- زر تحميل ملفات الفيديو كاملة -->
     <a href="#" class="collection-btn videos-collection-btn">🎬 تحميل جميع الفيديوهات كملف واحد ⬇️</a>
 
     <!-- المحتوى الصوتي -->
@@ -224,14 +297,37 @@
         <div class="item audio"><span>استماع الدرس (25): ثَمَراتٌ مُتَّصِلةٌ</span><span class="soon-badge">⏳ قريبًا</span></div>
     </div>
 
+    <!-- زر تحميل الصوتيات كاملة -->
     <a href="#" class="collection-btn audios-collection-btn">🎧 تحميل جميع الصوتيات كملف واحد ⬇️</a>
 
     <!-- حقوق النشر -->
     <div class="copyright">
-    📌 يُسمح بالنسخ والمشاركة والنشر دون قيود.
+        📌 يُسمح بالنسخ والمشاركة والنشر دون قيود.
     </div>
 
 </div>
+
+<script>
+    function getShareUrl() {
+        return window.location.href;
+    }
+
+    function getShareText() {
+        return "المحتوى المرئي والصوتي لكتاب دليل أحكام التجويد:\n" + getShareUrl();
+    }
+
+    function shareWhatsApp() {
+        var text = encodeURIComponent(getShareText());
+        var url  = "https://wa.me/?text=" + text;
+        window.open(url, "_blank");
+    }
+
+    function shareTelegram() {
+        var text = encodeURIComponent(getShareText());
+        var url  = "https://t.me/share/url?url=" + encodeURIComponent(getShareUrl()) + "&text=" + text;
+        window.open(url, "_blank");
+    }
+</script>
 
 </body>
 </html>
