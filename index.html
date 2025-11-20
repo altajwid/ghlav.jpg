@@ -74,9 +74,9 @@
             box-shadow: 0 0 18px rgba(212,175,55,0.8);
         }
 
-        /* عناوين الأقسام (تم تصغير الحجم درجة واحدة هنا) */
+        /* عناوين الأقسام */
         .section-title {
-            font-size: 20px;        /* كان أكبر، صغّرناه درجة واحدة */
+            font-size: 20px;
             font-weight: 800;
             padding: 10px 12px;
             color: #fff;
@@ -87,11 +87,11 @@
         }
 
         .section-title.video {
-            background: #0f7b3a;    /* أخضر أفتح قليلاً */
+            background: #0f7b3a;
         }
 
         .section-title.audio {
-            background: #274b8f;    /* أزرق غامق */
+            background: #274b8f;
         }
 
         .items-wrapper {
@@ -145,11 +145,11 @@
         }
 
         .bulk-download-btn.video {
-            background: #15803d; /* أخضر أغمق قليلاً من خلفية دروس الفيديو */
+            background: #15803d;
         }
 
         .bulk-download-btn.audio {
-            background: #1d4ed8; /* أزرق أغمق قليلاً من خلفية دروس الصوتيات */
+            background: #1d4ed8;
         }
 
         .bulk-download-btn:hover {
@@ -179,43 +179,75 @@
         .share-title {
             font-size: 15px;
             font-weight: 800;
-            color: #e11d48; /* أحمر فاتح */
-            margin-bottom: 8px;
+            color: #e11d48;
+            margin-bottom: 10px;
         }
 
         .share-buttons {
             display: flex;
             justify-content: center;
-            gap: 10px;
+            gap: 18px;
             flex-wrap: wrap;
         }
 
-        .share-btn {
-            padding: 8px 14px;
-            border-radius: 999px;
-            font-size: 13px;
-            font-weight: 700;
-            text-decoration: none;
-            color: #ffffff;
-            display: inline-flex;
+        .share-item {
+            display: flex;
+            flex-direction: column;
             align-items: center;
             gap: 6px;
+            min-width: 70px;
         }
 
-        .share-btn.whatsapp {
-            background: #16a34a;
-        }
-
-        .share-btn.telegram {
-            background: #0ea5e9;
-        }
-
-        .share-btn.facebook {
-            background: #1877f2;
+        .share-btn {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.16);
+            transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
         }
 
         .share-btn:hover {
-            filter: brightness(1.1);
+            transform: translateY(-2px) scale(1.03);
+            filter: brightness(1.05);
+            box-shadow: 0 6px 14px rgba(0,0,0,0.22);
+        }
+
+        .share-icon {
+            width: 22px;
+            height: 22px;
+            filter: brightness(0) invert(1); /* الأيقونة باللون الأبيض */
+        }
+
+        .share-label {
+            font-size: 12px;
+            font-weight: 700;
+            color: #111827;
+        }
+
+        .share-btn.whatsapp {
+            background: #25D366;
+        }
+
+        .share-btn.telegram {
+            background: #0088cc;
+        }
+
+        .share-btn.facebook {
+            background: #1877F2;
+        }
+
+        @media (max-width: 480px) {
+            .share-buttons {
+                gap: 14px;
+            }
+            .share-btn {
+                width: 44px;
+                height: 44px;
+            }
         }
     </style>
 </head>
@@ -322,19 +354,40 @@
     <!-- منطقة المشاركة (بعد عبارة الحقوق) -->
     <div class="share-area">
         <div class="share-title">شارك الكتاب مع الأحبة</div>
+
         <div class="share-buttons">
-            <!-- غيّر الرابط (url) عند الحاجة -->
-            <a class="share-btn whatsapp"
-               href="https://wa.me/?text=%D8%AF%D9%84%D9%8A%D9%84%20%D8%A3%D8%AD%D9%83%D8%A7%D9%85%20%D8%A7%D9%84%D8%AA%D8%AC%D9%88%D9%8A%D8%AF%20-%20https%3A%2F%2Feyada1977.github.io"
-               target="_blank" rel="noopener noreferrer">واتساب</a>
+            <!-- واتساب -->
+            <div class="share-item">
+                <a class="share-btn whatsapp"
+                   href="https://wa.me/?text=%D8%AF%D9%84%D9%8A%D9%84%20%D8%A3%D8%AD%D9%83%D8%A7%D9%85%20%D8%A7%D9%84%D8%AA%D8%AC%D9%88%D9%8A%D8%AF%20-%20https%3A%2F%2Feyada1977.github.io"
+                   target="_blank" rel="noopener noreferrer">
+                    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg"
+                         alt="واتساب" class="share-icon">
+                </a>
+                <div class="share-label">واتساب</div>
+            </div>
 
-            <a class="share-btn telegram"
-               href="https://t.me/share/url?url=https%3A%2F%2Feyada1977.github.io&text=%D8%AF%D9%84%D9%8A%D9%84%20%D8%A3%D8%AD%D9%83%D8%A7%D9%85%20%D8%A7%D9%84%D8%AA%D8%AC%D9%88%D9%8A%D8%AF"
-               target="_blank" rel="noopener noreferrer">تيلغرام</a>
+            <!-- تيلغرام -->
+            <div class="share-item">
+                <a class="share-btn telegram"
+                   href="https://t.me/share/url?url=https%3A%2F%2Feyada1977.github.io&text=%D8%AF%D9%84%D9%8A%D9%84%20%D8%A3%D8%AD%D9%83%D8%A7%D9%85%20%D8%A7%D9%84%D8%AA%D8%AC%D9%88%D9%8A%D8%AF"
+                   target="_blank" rel="noopener noreferrer">
+                    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/telegram.svg"
+                         alt="تيلغرام" class="share-icon">
+                </a>
+                <div class="share-label">تيلغرام</div>
+            </div>
 
-            <a class="share-btn facebook"
-               href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Feyada1977.github.io"
-               target="_blank" rel="noopener noreferrer">فيسبوك</a>
+            <!-- فيسبوك -->
+            <div class="share-item">
+                <a class="share-btn facebook"
+                   href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Feyada1977.github.io"
+                   target="_blank" rel="noopener noreferrer">
+                    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg"
+                         alt="فيسبوك" class="share-icon">
+                </a>
+                <div class="share-label">فيسبوك</div>
+            </div>
         </div>
     </div>
 
