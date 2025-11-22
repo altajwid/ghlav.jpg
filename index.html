@@ -5,25 +5,21 @@
     <title>المحتوى المرئي والصوتي للكتاب</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- وسوم المشاركة الاجتماعية (Open Graph) -->
+    <!-- وسوم المشاركة الاجتماعية (للبطاقة التي تظهر مع الرابط) -->
     <meta property="og:type" content="website">
-    <meta property="og:site_name" content="كتاب دليل أحكام التجويد">
     <meta property="og:locale" content="ar_AR">
-    <meta property="og:url" content="https://altajwid.github.io/">
-    <meta property="og:title" content="كتاب دليل أحكام التجويد">
+    <meta property="og:title" content="دليل أحكام التجويد – المحتوى المرئي والصوتي للكتاب">
     <meta property="og:description" content="كتاب دليل أحكام التجويد – المحتوى المرئي والصوتي للكتاب">
-
-    <!-- صورة الغلاف التي تُستخدم في المعاينة -->
+    <meta property="og:url" content="https://altajwid.github.io">
+    <!-- صورة غلاف الكتاب (المستخدمة في فيس بوك وواتساب وتويتر...) -->
     <meta property="og:image" content="https://altajwid.github.io/cover.jpg?v=3">
     <meta property="og:image:secure_url" content="https://altajwid.github.io/cover.jpg?v=3">
-    <meta property="og:image:type" content="image/jpeg">
-    <meta property="og:image:width" content="768">
-    <meta property="og:image:height" content="1126">
+    <meta property="og:image:alt" content="غلاف كتاب دليل أحكام التجويد">
 
     <!-- بطاقة تويتر -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="كتاب دليل أحكام التجويد">
-    <meta name="twitter:description" content="المحتوى المرئي والصوتي للكتاب">
+    <meta name="twitter:title" content="دليل أحكام التجويد – المحتوى المرئي والصوتي للكتاب">
+    <meta name="twitter:description" content="كتاب دليل أحكام التجويد – المحتوى المرئي والصوتي للكتاب">
     <meta name="twitter:image" content="https://altajwid.github.io/cover.jpg?v=3">
 
     <style>
@@ -50,7 +46,7 @@
         h1 {
             font-family: "Amiri", "Cairo", serif;
             color: #0b4d27;
-            margin-bottom: 10px;
+            margin-bottom: 6px;
             font-size: 24px;
             font-weight: 900;
         }
@@ -58,15 +54,15 @@
         .subtitle {
             font-size: 13px;
             color: #4b5563;
-            margin-bottom: 18px;
+            margin-bottom: 16px;
         }
 
-        /* صورة غلاف الكتاب داخل الصفحة */
+        /* صورة الغلاف داخل الصفحة */
         .cover {
             width: 85%;
             border-radius: 15px;
             box-shadow: 0 6px 18px rgba(0,0,0,0.3);
-            margin-bottom: 25px;
+            margin-bottom: 22px;
         }
 
         /* زر PDF */
@@ -164,7 +160,6 @@
             padding: 12px;
             border-radius: 10px;
             border: 1px solid #e6d68a;
-            text-align: center;
         }
 
         /* منطقة المشاركة */
@@ -181,7 +176,7 @@
             display: flex;
             justify-content: center;
             gap: 10px;
-            flex-wrap: wrap; /* لعدم اختفاء أيقونات على الشاشات الضيقة */
+            flex-wrap: wrap; /* حتى تظهر كل الأيقونات على الجوال */
         }
 
         .share-item {
@@ -201,13 +196,6 @@
             justify-content: center;
             text-decoration: none;
             box-shadow: 0 4px 10px rgba(0,0,0,0.16);
-            transition: 0.25s;
-        }
-
-        .share-btn:hover {
-            transform: translateY(-2px) scale(1.03);
-            filter: brightness(1.05);
-            box-shadow: 0 6px 14px rgba(0,0,0,0.22);
         }
 
         .share-icon {
@@ -269,9 +257,9 @@
     <div class="subtitle">سيتم تفعيل الروابط لاحقًا بإذن الله.</div>
 
     <!-- صورة الغلاف داخل الصفحة -->
-    <img src="cover.jpg" class="cover" alt="غلاف الكتاب">
+    <img src="cover.jpg" class="cover" alt="غلاف كتاب دليل أحكام التجويد">
 
-    <!-- زر تحميل الكتاب PDF -->
+    <!-- زر التحميل الرئيسي -->
     <div class="download-main-wrapper">
         <a href="#" class="download-main-btn">📥 تحميل الكتاب PDF</a>
     </div>
@@ -364,9 +352,9 @@
             <!-- واتساب -->
             <div class="share-item">
                 <a class="share-btn whatsapp"
-                   href="https://wa.me/?text=https://altajwid.github.io%20-%20كتاب%20(دليل%20أحكام%20التجويد)"
-                   target="_blank">
-                    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" class="share-icon" alt="WhatsApp">
+                   href="https://wa.me/?text=https://altajwid.github.io%0Aكتاب%20(دليل%20أحكام%20التجويد)"
+                   target="_blank" rel="noopener">
+                    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" class="share-icon" alt="واتساب">
                 </a>
                 <div class="share-label">واتساب</div>
             </div>
@@ -375,8 +363,8 @@
             <div class="share-item">
                 <a class="share-btn telegram"
                    href="https://t.me/share/url?url=https://altajwid.github.io&text=كتاب%20(دليل%20أحكام%20التجويد)"
-                   target="_blank">
-                    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/telegram.svg" class="share-icon" alt="Telegram">
+                   target="_blank" rel="noopener">
+                    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/telegram.svg" class="share-icon" alt="تيلغرام">
                 </a>
                 <div class="share-label">تيلغرام</div>
             </div>
@@ -385,8 +373,8 @@
             <div class="share-item">
                 <a class="share-btn facebook"
                    href="https://www.facebook.com/sharer/sharer.php?u=https://altajwid.github.io"
-                   target="_blank">
-                    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" class="share-icon" alt="Facebook">
+                   target="_blank" rel="noopener">
+                    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" class="share-icon" alt="فيسبوك">
                 </a>
                 <div class="share-label">فيسبوك</div>
             </div>
@@ -395,8 +383,8 @@
             <div class="share-item">
                 <a class="share-btn twitter"
                    href="https://twitter.com/intent/tweet?url=https://altajwid.github.io&text=كتاب%20(دليل%20أحكام%20التجويد)"
-                   target="_blank">
-                    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/x.svg" class="share-icon" alt="Twitter">
+                   target="_blank" rel="noopener">
+                    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/x.svg" class="share-icon" alt="تويتر">
                 </a>
                 <div class="share-label">تويتر</div>
             </div>
