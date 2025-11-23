@@ -61,7 +61,7 @@
         /* بطاقة الغلاف */
         .cover-card {
             width: 85%;
-            margin: 0 auto 20px; /* تقليل المسافة أسفل الغلاف قليلاً */
+            margin: 0 auto 25px;
             background: linear-gradient(180deg, #fefaf3, #f3e5d8);
             border-radius: 20px;
             padding: 16px;
@@ -78,11 +78,11 @@
         .download-main-wrapper {
             display: flex;
             justify-content: center;
-            margin: 10px auto 22px; /* رفع الزر درجة (أقرب للغلاف) وتقليل المسافة تحته قليلاً */
+            margin-bottom: 22px; /* رفعه قليلاً بتقليل المسافة تحته */
         }
 
         .download-main-btn {
-            padding: 12px 36px;   /* أقصر بدرجة من السابق */
+            padding: 13px 34px;      /* أقصر قليلاً من السابق */
             font-size: 17px;
             font-weight: 700;
             border-radius: 16px;
@@ -93,7 +93,7 @@
             background: linear-gradient(135deg, #b47b5d, #8c6b4c);
             box-shadow: 0 0 16px rgba(212,175,55,0.6);
             transition: 0.25s;
-            /* تم إلغاء النبض: لا يوجد animation هنا */
+            /* تم إيقاف النبض بحذف animation */
         }
 
         .download-main-btn:hover {
@@ -113,12 +113,12 @@
         .accordion-header {
             width: 100%;
             border-radius: 12px;
-            padding: 14px 16px; /* تكبير بسيط للزرين الثاني والثالث */
+            padding: 12px 14px;
             margin: 10px 0;
             border: none;
             cursor: pointer;
             color: #fff;
-            font-size: 18px;  /* تكبير الخط */
+            font-size: 17px;
             font-weight: 800;
             display: flex;
             align-items: center;
@@ -314,10 +314,8 @@
                 font-size: 22px;
             }
 
-            .download-main-btn {
-                width: 100%;
-                padding: 12px;
-            }
+            /* لم نعد نغيّر عرض زر التحميل في الجوال
+               حتى يظهر مثل الحاسب (بدون width:100%) */
         }
     </style>
 </head>
